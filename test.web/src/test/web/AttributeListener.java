@@ -4,7 +4,7 @@ import javax.servlet.ServletRequestAttributeEvent;
 import javax.servlet.ServletRequestAttributeListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener
+//@WebListener Kommenteret ud
 public class AttributeListener implements ServletRequestAttributeListener {
 
 	@Override
