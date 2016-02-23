@@ -3,8 +3,8 @@ package test.ejb;
 import javax.ejb.Remote;
 
 @Remote
-public interface MyStatefulRemote {
+public interface MyStatefulRemote extends MyStatefulInterface {
 
-	int count();
+
 
 }

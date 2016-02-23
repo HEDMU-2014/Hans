@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import test.ejb.TestLocal;
+import test.ejb.TestRemote;
 
 /**
  * Servlet implementation class Test
@@ -18,7 +18,7 @@ import test.ejb.TestLocal;
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	@EJB private TestLocal ejb;
+	@EJB private TestRemote ejb;
        
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

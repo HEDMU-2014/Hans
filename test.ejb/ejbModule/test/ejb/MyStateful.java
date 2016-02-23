@@ -4,6 +4,8 @@ import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
 
+import test.domain.MyNumber;
+
 /**
  * Session Bean implementation class MyStateful
  */
@@ -14,8 +16,8 @@ public class MyStateful implements MyStatefulRemote, MyStatefulLocal {
 	
 	@Override
 	@Lock(LockType.WRITE)
-	public int count() {
-		return ++count;
+	public MyNumber count() {
+		return new MyNumber(++count);
 	}
 	
 	

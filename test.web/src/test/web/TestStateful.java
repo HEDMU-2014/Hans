@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import test.ejb.MyStatefulLocal;
+import test.ejb.MyStatefulRemote;
 
 /**
  * Servlet implementation class TestStateful
@@ -17,14 +17,14 @@ import test.ejb.MyStatefulLocal;
 @WebServlet("/TestStateful")
 public class TestStateful extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	@EJB private MyStatefulLocal ejb;
+	@EJB private MyStatefulRemote ejb;
        
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Count = " + ejb.count());
+		response.getWriter().append("Count = " + ejb.count().getI());
 	}
 
 	/**

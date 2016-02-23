@@ -24,7 +24,7 @@ public class TestStateful2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Count = " + ejb.count());
+		response.getWriter().append("Count = " + ejb.count().getI());
 	}
 
 	/**
