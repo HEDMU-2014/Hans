@@ -24,8 +24,10 @@ public class Test2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("<h1>Http-method GET received");
-		String greeting = ejb.greeting(request.getParameter("name"));
+		String greeting = ejb.read(request.getParameter("name")).get();
 		response.getWriter().append("<h1>").append(greeting);
+		ejb.update("bjorn", "Bjørn Røkenes");
+		response.getWriter().append("<h1>").append(ejb.read("bjorn").get());
 	}
 
 	/**

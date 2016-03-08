@@ -1,5 +1,7 @@
 package test.ejb;
 
+import java.util.Optional;
+
 import javax.ejb.Local;
 
 @Local
@@ -9,7 +11,7 @@ public interface Test2Local {
 
 	void create(String key, String value);
 
-	String read(String key);
+	Optional<String> read(String key);
 
 	void update(String key, String value);
 

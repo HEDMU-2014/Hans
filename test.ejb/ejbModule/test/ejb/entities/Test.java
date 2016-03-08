@@ -11,12 +11,12 @@ import javax.persistence.*;
 @Entity
 
 public class Test implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-	   
 	@Id
 	private String key;
+
 	private String value;
-	private static final long serialVersionUID = 1L;
 
 	public Test() {
 		super();

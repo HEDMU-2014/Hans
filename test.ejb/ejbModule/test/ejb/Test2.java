@@ -1,5 +1,7 @@
 package test.ejb;
 
+import java.util.Optional;
+
 import javax.ejb.Stateless;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
@@ -34,9 +36,13 @@ public class Test2 implements Test2Remote, Test2Local {
 	}
 	
 	@Override
-	public String read(String key) {
+	public Optional<String> read(String key) {
 		test.ejb.entities.Test test = em.find(test.ejb.entities.Test.class, key);
-		return test.getValue();
+		if (test != null) {
+			return Optional.of(test.getValue());
+		} else {
+			return Optional.empty();
+		}
 	}
 	
 	@Override
